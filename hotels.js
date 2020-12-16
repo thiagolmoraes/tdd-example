@@ -1,9 +1,10 @@
-const getHotels = () => {
-  return [
-    { id: 1, name: "Thiago Hotel" },
-    { id: 2, name: "Brucelherme Hotel" },
-    { id: 3, name: "Cachorros Hotel" },
-  ];
+module.exports.getHotels = () => {
+  return db.query();
+  // return [
+  //   { id: 1, name: "Thiago Hotel" },
+  //   { id: 2, name: "Brucelherme Hotel" },
+  //   { id: 3, name: "Cachorros Hotel" },
+  // ];
 };
 
 const getRatings = () => {
@@ -16,4 +17,11 @@ const getRatings = () => {
     { hotel_id: 2, client_id: 6, rating: 4 },
     { hotel_id: 3, client_id: 7, rating: 3 },
   ];
+};
+
+module.exports.getHotelsWithRatings = () => {
+  return module.exports.getHotels().map((hotel) => {
+    hotel.ratings = getRatings().filter((r) => r.hotel_id === hotel.id);
+    return hotel;
+  });
 };
