@@ -42,4 +42,8 @@ describe("hotels", () => {
 
     expect(hotels.getHotelsWithRatings()).toEqual(expected);
   });
+
+  it("get hotels with average ratings", () => {
+
+  });
 });
