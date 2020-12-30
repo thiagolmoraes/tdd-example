@@ -52,9 +52,9 @@ describe("hotels", () => {
         //what expect
 
         const expected = [
-            { id: 1, name: 'Thiago Hotel', average: 4.6 },
-            { id: 2, name: 'Brucelherme Hotel', average: 7 },
-            { id: 3, name: 'Cachorros Hotel', average: 9.3 },
+            { id: 1, name: 'Thiago Hotel', average: (14 / 3) },
+            { id: 2, name: 'Brucelherme Hotel', average: (9 / 3) },
+            { id: 3, name: 'Cachorros Hotel', average: (12 / 3) },
         ]
         expect(hotels.getHotelsAverageRatings()).toEqual(expected);
     });

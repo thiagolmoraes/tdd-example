@@ -33,12 +33,12 @@ const getHotelsWithRatings = () => {
 const getHotelsAverageRatings = () => {
     return getHotels().map(hotel => {
         const ratings = getRatings().filter((r) => r.hotel_id === hotel.id);
-        hotel.average = ratings.reduce((acc, el) => acc + el.rating, 0 / ratings.length)
+        hotel.average = ratings.reduce((acc, el) => {
+            return acc + el.rating / ratings.length;
+        }, 0)
         return hotel
 
     })
 }
-
-console.log(getHotelsAverageRatings());
 
 module.exports = { getHotels, getRatings, getHotelsWithRatings, getHotelsAverageRatings }
